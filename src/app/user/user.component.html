@@ -1,0 +1,84 @@
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                    <div>
+                       
+                    </div>
+                    <div>
+                    <label>Firstname:</label>
+                    <input type="text" formControlName="fName" id="firstname" class="form-control">
+                    <span class="valid" *ngIf="userForm.get('fName')?.hasError('required') && userForm.get('fName')?.touched">firstname required</span>
+                    
+                </div>
+                <div>
+                    <label>Lastname:</label>
+                    <input type="text" formControlName="lastname" value="lastname" class="form-control">
+                    <span class="valid" *ngIf="userForm.get('lastname')?.hasError('required') && userForm.get('lastname')?.touched">lastname required</span>
+                </div>
+                <div>
+                    <label>Email:</label>
+                    <input type="email" formControlName="email" value="email" class="form-control">
+                    <span class="valid" *ngIf="userForm.get('email')?.hasError('required') && userForm.get('email')?.touched">Enter email Id</span>
+                    <span class="valid" *ngIf="userForm.get('email')?.hasError('email') && userForm.get('email')?.touched">Enter Valid Email Id</span>
+                 </div>
+                <div>
+                    <label>Password:</label>
+                    <input type="password" formControlName="password" value="password" class="form-control">
+                    <span class="valid" *ngIf="userForm.get('password')?.hasError('required') && userForm.get('password')?.touched">password required</span>
+                    <span class="valid" *ngIf="userForm.get('password')?.hasError('password') && userForm.get('password')?.touched">Enter 8 Charater in password</span>
+                </div>
+                <div>
+                    <label>Phone No:</label>
+                    <input type="tel" formControlName="phone" value="phone" class="form-control">
+                    <span class="valid" *ngIf="userForm.get('phone')?.hasError('required') && userForm.get('phone')?.touched">Phone No required</span>
+                </div>
+                <div class="form-group ">
+                    <label for="inputState">Country</label>
+                    <select id="inputState" class="form-control" formControlName="Country">
+                        <option selected>Choose...</option>
+                      <option>...</option>  
+                    </select>
+                   
+                    </div>
+                <div class="form-group ">
+                    <label>State</label>
+                    <select class="form-control">
+                        <option selected>Choose</option>
+                        <option></option>
+                    </select>
+                   
+                </div> 
+                <div class="form-group">
+                        <label>City</label>
+                        <select class="form-control">
+                            <option>Choose..</option>
+                            <option>Madhya pradesh</option>
+                            <option>utter pradesh</option>
+                        </select>
+                </div>
+                
+                <div>
+                    <label>Date Of Birth:</label>
+                    <input type="date" formControlName="DOB" value="DOB" class="form-control">
+                </div>
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <label class="form-check-label" for="inlineRadio1">Male</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <label class="form-check-label" for="inlineRadio2">Female</label>
+                  </div>
+                <div>
+                    <button  class="btn btn-primary mx-3" type="submit">Submit</button>
+                    <button class="btn btn-info">Cancel</button>
+                </div>
+                
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
